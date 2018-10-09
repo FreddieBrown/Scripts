@@ -6,7 +6,7 @@ arguments="$@"
 
 read -r -d '' COMMANDS << EOM
         cd /test/;
-        gcc -o $executable $executable.c
+        make clean debug;
         valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$executable $arguments;
 EOM
 
